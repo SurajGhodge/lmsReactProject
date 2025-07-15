@@ -1,15 +1,16 @@
-import React from 'react';
-import EmployeeManager from './admin/EmployeeManager';
-import BranchManager from './admin/BranchManager';
-import LeaveTypeManager from './admin/LeaveTypeManager';
-import HolidayManager from './admin/HolidayManager';
-import AllLeaveRecords from './admin/AllLeaveRecords';
+// import EmployeeManager from './admin/EmployeeManager';
+// import BranchManager from './admin/BranchManager';
+// import LeaveTypeManager from './admin/LeaveTypeManager';
+// import HolidayManager from './admin/HolidayManager';
+// import AllLeaveRecords from './admin/AllLeaveRecords';
 import { MdOutlinePersonAddAlt1, } from "react-icons/md";
 import { GoPencil } from "react-icons/go";
 import {IoIosRemoveCircleOutline} from "react-icons/io"
 import { IoPeopleSharp } from "react-icons/io5";
 import { MdPersonSearch } from "react-icons/md";
 import { Card,CardBody } from 'react-bootstrap';
+// import AddEmployeeForm from './admin/AddEmployeeForm';
+import {BrowserRouter,Route,Link} from 'react-router-dom';
 
 function AdminDashboard() {
   return (
@@ -26,12 +27,7 @@ function AdminDashboard() {
 ><div className='text-center lg'><MdOutlinePersonAddAlt1 size={60} /></div>
   
   <CardBody>
-   
-   
-    
-   <button type="button" class="btn btn-outline-success">      Add Employee
-
-</button>
+   <Link to={'/addemp'} className="btn btn-outline-success" >Add Employee</Link>
   </CardBody>
 </Card>
    <Card
@@ -44,11 +40,7 @@ function AdminDashboard() {
 ><div className='text-center lg'><GoPencil size={60} /></div>
   
   <CardBody>
-   
-   
-    
-   <button type="button" class="btn btn-outline-secondary">      Update Details
-</button>
+    <Link to={'/updateemp'} className="btn btn-outline-secondary" >Update Employee</Link>
   </CardBody>
 </Card>
    <Card
@@ -62,7 +54,7 @@ function AdminDashboard() {
   
   <CardBody>
    
-   <button type="button" class="btn btn-outline-danger">Remove details</button>
+    <Link to={'/deleteemp'} className="btn btn-outline-danger" >Remove Details</Link>
   </CardBody>
 </Card>
    <Card
@@ -78,7 +70,7 @@ function AdminDashboard() {
     
    
     
-  <button type="button" class="btn btn-outline-warning">View all</button>
+  <Link to={'/viewemp'} className="btn btn-outline-warning" >View All</Link>
   </CardBody>
 </Card>
 
@@ -92,15 +84,10 @@ function AdminDashboard() {
 ><div className='text-center lg'><MdPersonSearch size={60} /></div>
   
   <CardBody>
- <button  class="btn btn-outline-info">View</button>
+  <Link to={'/view'} className="btn btn-outline-info" >View</Link>
   </CardBody>
 </Card>
-      </div>
-      <EmployeeManager />
-      <BranchManager />
-      <LeaveTypeManager />
-      <HolidayManager />
-      <AllLeaveRecords />
-    </div>
+      </div></div>
+      
   );
 }export default AdminDashboard;
