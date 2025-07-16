@@ -1,16 +1,12 @@
-// import EmployeeManager from './admin/EmployeeManager';
-// import BranchManager from './admin/BranchManager';
-// import LeaveTypeManager from './admin/LeaveTypeManager';
-// import HolidayManager from './admin/HolidayManager';
-// import AllLeaveRecords from './admin/AllLeaveRecords';
 import { MdOutlinePersonAddAlt1, } from "react-icons/md";
 import { GoPencil } from "react-icons/go";
-import {IoIosRemoveCircleOutline} from "react-icons/io"
+import { MdRemoveCircleOutline } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
 import { MdPersonSearch } from "react-icons/md";
 import { Card,CardBody } from 'react-bootstrap';
-// import AddEmployeeForm from './admin/AddEmployeeForm';
 import {BrowserRouter,Route,Link} from 'react-router-dom';
+import { MdAddCircleOutline } from "react-icons/md";
+import { FcCalendar } from "react-icons/fc";
 
 function AdminDashboard() {
   return (
@@ -50,7 +46,7 @@ function AdminDashboard() {
     margin:5,
     color:'red'
   }}
-><div className='text-center lg'><IoIosRemoveCircleOutline size={60} /></div>
+><div className='text-center lg'><MdRemoveCircleOutline size={60} /></div>
   
   <CardBody>
    
@@ -87,6 +83,26 @@ function AdminDashboard() {
   <Link to={'/view'} className="btn btn-outline-info" >View</Link>
   </CardBody>
 </Card>
+
+<Card
+  style={{
+    width: '12rem',
+    textAlign:'center',
+    margin:5,
+    color:'green'
+  }}
+><div className='text-center lg'><MdAddCircleOutline size={60} /></div>
+  
+  <CardBody>
+  <Link to={'/addholiday'} className="btn btn-outline-success" >Add Holiday</Link>
+  </CardBody>
+</Card> 
+ <Card style={{ width: '12rem', textAlign: 'center', margin: 5, color: 'red' }}>
+            <div className='text-center'><FcCalendar size={60} /></div>
+            <CardBody>
+              <Link to={'/viewholiday'} className="btn btn-outline-danger">Holiday Calendar</Link>
+            </CardBody>
+          </Card>
       </div></div>
       
   );

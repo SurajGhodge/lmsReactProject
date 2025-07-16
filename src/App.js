@@ -9,6 +9,10 @@ import AddEmployeeForm from './components/admin/AddEmployeeForm';
 import UpdateEmployeeForm from './components/admin/UpdateEmployeeForm';
 import EmployeeList from './components/admin/EmployeeList';
 import ViewEmployees from './components/admin/ViewEmployees';
+import ApplyLeaveForm from './components/employee/ApplyLeaveForm';
+import ViewLeaves from './components/employee/ViewLeaves';
+import HolidayList from './components/employee/HolidayList';
+import AddHolidayForm from './components/admin/AddHolidayForm';
 
 function App() {
   const router = createBrowserRouter([
@@ -63,7 +67,40 @@ function App() {
         <Navbar/>
        <ViewEmployees/>
               </div>
+        },
+        { 
+      path: "/applyleave",
+      element:
+      <div>
+        <Navbar/>
+       <ApplyLeaveForm/>
+              </div>
+        },
+        { 
+      path: "/viewleaves",
+      element:
+      <div>
+        <Navbar/>
+       <ViewLeaves/>
+              </div>
+        },
+        { 
+      path: "/viewholiday",
+      element:
+      <div>
+        <Navbar/>
+      <HolidayList/>
+              </div>
+        },
+        { 
+      path: "/addholiday",
+      element:
+      <div>
+        <Navbar/>
+      <AddHolidayForm/>
+              </div>
         }
+
   ]);
 
   return <RouterProvider router={router} />;
