@@ -5,14 +5,16 @@ import EmployeeDashboard from './components/EmployeeDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AddEmployeeForm from './components/admin/AddEmployeeForm';
-import UpdateEmployeeForm from './components/admin/UpdateEmployeeForm';
-import EmployeeList from './components/admin/EmployeeList';
-import ViewEmployees from './components/admin/ViewEmployees';
 import ApplyLeaveForm from './components/employee/ApplyLeaveForm';
 import ViewLeaves from './components/employee/ViewLeaves';
-import HolidayList from './components/employee/HolidayList';
 import AddHolidayForm from './components/admin/AddHolidayForm';
+import ManageHoliday from './components/admin/ManageHoliday';
+import HolidayList from './components/employee/HolidayList';
+import ManageBranches from './components/admin/ManageBranches';
+import ManageEmployees from './components/admin/ManageEmployees';
+import EmployeeDetails from './components/admin/EmployeeDetails';
+import LeaveRecords from './components/admin/LeaveRecords';
+
 
 function App() {
   const router = createBrowserRouter([
@@ -36,39 +38,6 @@ function App() {
        </div>
         },
         { 
-      path: "/addemp",
-      element:
-      <div>
-        <Navbar/>
-       <AddEmployeeForm/>
-       </div>
-        },
-         { 
-      path: "/updateemp",
-      element:
-      <div>
-        <Navbar/>
-       <UpdateEmployeeForm/>
-       </div>
-        }
-        ,
-        { 
-      path: "/deleteemp",
-      element:
-      <div>
-        <Navbar/>
-       <EmployeeList/>
-       </div>
-        },
-         { 
-      path: "/viewemp",
-      element:
-      <div>
-        <Navbar/>
-       <ViewEmployees/>
-              </div>
-        },
-        { 
       path: "/applyleave",
       element:
       <div>
@@ -85,11 +54,19 @@ function App() {
               </div>
         },
         { 
-      path: "/viewholiday",
+      path: "/viewholidayemp",
       element:
       <div>
         <Navbar/>
       <HolidayList/>
+              </div>
+        },
+        { 
+      path: "/viewholidayadmin",
+      element:
+      <div>
+        <Navbar/>
+      <ManageHoliday/>
               </div>
         },
         { 
@@ -98,6 +75,40 @@ function App() {
       <div>
         <Navbar/>
       <AddHolidayForm/>
+              </div>
+        },
+        { 
+      path: "/managebranch",
+      element:
+      <div>
+        <Navbar/>
+      <ManageBranches/>
+              </div>
+        },
+        { 
+      path: "/manageemployee",
+      element:
+      <div>
+        <Navbar/>
+      <ManageEmployees/>
+              </div>
+        },
+        {
+  path: "/employee/:id",
+  element: (
+    <div>
+      <Navbar />
+      <EmployeeDetails />
+    </div>
+  ),
+}
+,
+ { 
+      path: "/leaverecords",
+      element:
+      <div>
+        <Navbar/>
+      <LeaveRecords/>
               </div>
         }
 

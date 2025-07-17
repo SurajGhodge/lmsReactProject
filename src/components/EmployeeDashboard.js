@@ -67,7 +67,7 @@ function EmployeeDashboard() {
           <Card style={{ width: '12rem', textAlign: 'center', margin: 5, color: 'red' }}>
             <div className='text-center'><SlCalender size={60} /></div>
             <CardBody>
-              <Link to={'/viewholiday'} className="btn btn-outline-danger">Holiday Calendar</Link>
+              <Link to={'/viewholidayemp'} className="btn btn-outline-danger">Holiday Calendar</Link>
             </CardBody>
           </Card>
 
